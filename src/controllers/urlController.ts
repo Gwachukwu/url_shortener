@@ -14,17 +14,17 @@ import { Url } from "../models/url";
 const baseUrl: string = `${process.env.BASE_URL}`;
 
 export const shortenUrl = async (req: Request, res: Response) => {
-  const { longUrl } = req.body; // destructure the longUrl from req.body.longUrl
+  const { longUrl } = req.body;
 
   // check base url if valid using the validUrl.isUri method
   if (!validUrl.isUri(baseUrl)) {
     return res.status(401).json("Invalid base URL");
   }
 
-  // if valid, we create the url code
+  // if valid, create the url code
   const urlCode: string = nanoid(8);
 
-  // check long url if valid using the validUrl.isUri method
+  // check long url if valid
   if (validUrl.isUri(longUrl)) {
     try {
       // check if the long URL was in the DB ,else we create it.
@@ -65,7 +65,7 @@ export const redirectUrl = async (req: Request, res: Response) => {
     // find a document match to the code in req.params.code
     const url = await Url.findOne({ urlCode: code });
     if (url) {
-      // when valid we perform a redirect
+      // when valid perform a redirect
       return res.redirect(url.longUrl);
     } else {
       // else return a not found 404 status
