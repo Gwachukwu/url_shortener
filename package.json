@@ -1,0 +1,47 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "Url shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwachukwu/url_shortener.git"
+  },
+  "keywords": [
+    "url",
+    "shortener",
+    "node",
+    "express",
+    "typescript"
+  ],
+  "author": "Gwachukwu Elebeke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gwachukwu/url_shortener/issues"
+  },
+  "homepage": "https://github.com/gwachukwu/url_shortener#readme",
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/nanoid": "^3.0.0",
+    "@types/node": "^16.11.7",
+    "@types/valid-url": "^1.0.3",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.1.30",
+    "valid-url": "^1.0.9"
+  }
+}
