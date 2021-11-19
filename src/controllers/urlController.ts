@@ -18,7 +18,7 @@ export const shortenUrl = async (req: Request, res: Response) => {
 
   // check base url if valid using the validUrl.isUri method
   if (!validUrl.isUri(baseUrl)) {
-    return res.status(401).json("Invalid base URL");
+    return res.status(400).json("Invalid base URL");
   }
 
   // if valid, create the url code
@@ -55,7 +55,7 @@ export const shortenUrl = async (req: Request, res: Response) => {
       res.status(500).json("Server Error");
     }
   } else {
-    res.status(401).json("Invalid longUrl");
+    res.status(400).json("Invalid longUrl");
   }
 };
 

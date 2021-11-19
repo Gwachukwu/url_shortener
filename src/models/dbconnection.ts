@@ -1,11 +1,16 @@
-import mongoose,{ConnectOptions} from "mongoose";
+import mongoose, { ConnectOptions } from "mongoose";
+
+const db =
+  process.env.NODE_ENV === "test"
+    ? `${process.env.DB_TEST}`
+    : `${process.env.DB}`;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(`${process.env.DB}`,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }  as ConnectOptions);
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    } as ConnectOptions);
     console.log("Connected to database");
   } catch (err) {
     console.log(err);
