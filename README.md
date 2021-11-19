@@ -1,4 +1,4 @@
-# URL SHORTENER API
+# URL SHORTENING SERVICE API
 
 - If your url is too long and you need a shorter version of it. Then this is the api for it.
 

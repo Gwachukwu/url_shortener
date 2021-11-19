@@ -12,7 +12,7 @@ describe("GET /", () => {
     const response = await request.get("/api");
 
     expect(response.status).toBe(200);
-    expect(response.body).toBe("Welcome to Url shortener api");
+    expect(response.body).toBe("Welcome to the Url Shorting Service api");
   });
 });
 
