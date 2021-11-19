@@ -52,6 +52,13 @@ describe("POST /api/url/shorten", () => {
 });
 
 describe("DELETE /:code", () => {
+  it("Should return error if url does not exist", async () => {
+    const response = await request.delete("/does-not-exist");
+
+    expect(response.status).toBe(404);
+    expect(response.body).toBe("Url Not Found");
+  });
+
   it("Should successfully delete shortUrl after creation", async () => {
     const createdUrlResponse = await request.post("/api/url/shorten").send({
       longUrl: "https://gwachukwu.netlify.app",
