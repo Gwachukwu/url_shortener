@@ -5,7 +5,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import routes from "./routes/index";
 
-import connectDB from "../src/models/dbconnection";
+import connectDB from "./models/dbconnection";
 
 connectDB();
 

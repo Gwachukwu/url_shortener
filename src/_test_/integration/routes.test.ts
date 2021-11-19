@@ -8,11 +8,11 @@ afterAll(async () => {
 });
 
 describe("GET /", () => {
-  it("Should return Url shortener api", async () => {
+  it("Should return welcome message", async () => {
     const response = await request.get("/api");
 
     expect(response.status).toBe(200);
-    expect(response.body).toBe("Url shortener api");
+    expect(response.body).toBe("Welcome to Url shortener api");
   });
 });
 
@@ -26,6 +26,13 @@ describe("GET /wrongShortUrl", () => {
 });
 
 describe("POST /api/url/shorten", () => {
+  it("Return error if no url is submitted", async () => {
+    const response = await request.post("/api/url/shorten");
+
+    expect(response.status).toBe(400);
+    expect(response.body).toBe("longUrl is required");
+  });
+
   it("Should fail when longUrl is invalid", async () => {
     const response = await request.post("/api/url/shorten").send({
       longUrl: "https/wrongurl",

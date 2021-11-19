@@ -16,6 +16,10 @@ const baseUrl: string = `${process.env.BASE_URL}`;
 export const shortenUrl = async (req: Request, res: Response) => {
   const { longUrl } = req.body;
 
+if(!longUrl){
+  return res.status(400).json("longUrl is required");
+}
+
   // check base url if valid using the validUrl.isUri method
   if (!validUrl.isUri(baseUrl)) {
     return res.status(400).json("Invalid base URL");

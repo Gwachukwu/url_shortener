@@ -13,7 +13,7 @@ router
     res.redirect(301, "/api")
   )
   .get("/api", (req: express.Request, res: express.Response) =>
-    res.json("Url shortener api")
+    res.json("Welcome to Url shortener api")
   )
   .get("/api/all", getAllUrls)
   .get("/:code", redirectUrl);
