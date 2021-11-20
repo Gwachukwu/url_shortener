@@ -16,6 +16,17 @@
 
 - Run `yarn dev` or `npm run dev` to run the typescript project in development mode.
 
+#### ENVIROMENT VARIABLES
+See `.env.example`
+
+- Values
+
+```markdown
+DB and DB_TEST: Mongodb databases for development and test modes, feel free to add a another one for production.
+
+BASE_URL: The API base Url endpoint (e.g. "http://localhost:3000")
+```
+
 - You are all set :blush:
 
 ### AVAILABLE ENDPOINTS
