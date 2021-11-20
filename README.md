@@ -29,6 +29,8 @@ BASE_URL: The API base Url endpoint (e.g. "http://localhost:3000")
 
 - You are all set :smile:
 
+- - - -
+
 ### AVAILABLE ENDPOINTS
 
 ```markdown
