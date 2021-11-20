@@ -19,10 +19,10 @@
 #### ENVIROMENT VARIABLES
 See `.env.example`
 
+```markdown
 - Values
 
-```markdown
-DB and DB_TEST: Mongodb databases for development and test modes, feel free to add a another one for production.
+DB and DB_TEST: MongoDB databases for development and test modes, feel free to add a another one for production.
 
 BASE_URL: The API base Url endpoint (e.g. "http://localhost:3000")
 ```
